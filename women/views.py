@@ -43,8 +43,8 @@ def login(request):
     return HttpResponse('Войти')
 
 
-def show_post(request, post_id):
-    post = get_object_or_404(Women, pk=post_id)
+def show_post(request, post_slug):
+    post = get_object_or_404(Women, slug=post_slug)
     cats = Category.objects.all()
 
     context = {
@@ -52,13 +52,14 @@ def show_post(request, post_id):
         'cats': cats,
         'menu': menu,
         'title': post.title,
-        'cat_selected': post.cat_id,
+        'selected_cat': post.cat_id,
     }
 
     return render(request, "women/post.html", context=context)
 
 
-def show_cat(request, cat_id):
+def show_cat(request, cat_slug):
+    cat_id = Category.objects.get(slug=cat_slug).pk
     posts = Women.objects.filter(cat_id=cat_id)
     cats = Category.objects.all()
 

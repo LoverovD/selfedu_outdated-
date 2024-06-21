@@ -27,11 +27,13 @@ img.img-article-left {
 	height: auto;
 	float: left;
 	padding: 0 10px 10px 0;
+	margin-top: 15px;
 }
 
 img.img-article-left.thumb {
 	max-width: 150px;
 	height: auto;
+	margin-top: 20px;
 }
 
 p.link-read-post {
@@ -86,6 +88,12 @@ ul.list-articles li {
 .header {
 	background: #3f4137;
 	height: 60px;
+}
+
+a.btn_warning {
+	position: absolute;
+	margin-top: 15px;
+	margin-left: calc(100% - 100px);
 }
 
 .logo {
@@ -157,6 +165,7 @@ ul.langitem li a {
 ul.langitem li a:hover {
 	color: #fda83d;
 }
+
 div.button {
 	background: #3f4137;
 	max-width: 200px;
